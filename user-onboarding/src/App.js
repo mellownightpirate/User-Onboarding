@@ -1,11 +1,16 @@
-import React from "react";
-import "./Components/Form";
+import React, { useState } from "react";
+import Form from "./Components/Form";
+import UsersData from "./Components/UsersData";
 import "./App.css";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  console.log(users)
+
   return (
     <div className="App">
-      <UserForm />
+      <Form users={users} />
+      <UsersData users={users} setUsers={setUsers} />
     </div>
   );
 }
